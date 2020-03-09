@@ -1,0 +1,19 @@
+pipeline{
+    agent any
+    options{
+        timestamps()
+    }
+    stages{
+        stage(Timeout){
+            steps{
+                build('timeout')
+            }
+
+        }
+        stage(timestamps){
+            steps{
+                build('timestamps')
+            }
+        }
+    }
+}
