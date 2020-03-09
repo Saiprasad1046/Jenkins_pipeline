@@ -1,0 +1,20 @@
+pipeline{
+        agent any
+        triggers{
+            cron('1 * * * *')
+        }
+        options{
+            timestamps()
+        }
+        stages{
+            stage("Commad bat"){ /* bat is used in only windows angent */
+                steps{
+                    echo "sai"
+                    sleep 2
+                    echo "sai1"
+                    sleep 3
+                    echo "sai2"
+                }
+            }
+        }
+    }
