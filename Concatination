@@ -1,0 +1,19 @@
+pipeline{
+    agent any 
+    environment {
+        first="Sai"
+        middle="Prasad"
+        last="Divya"
+    }
+        
+        stages{
+            stage(Concatination){
+                steps{
+                    script{
+                        Name = first + middle + last
+                    }
+                    echo "Hi Mr/Mrs $Name"
+                }
+            }
+            }
+        }
