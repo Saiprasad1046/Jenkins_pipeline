@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+    options{
+        retry(3)
+    }
+    stages{
+        stage("options"){
+            steps{
+                script{
+                        sh label: '', script: '. /Users/Prasad/sai/sai123.sh'
+                }
+               
+            }
+            }
+        }
+    }
