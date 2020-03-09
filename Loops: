@@ -1,0 +1,20 @@
+
+
+
+pipeline{
+    agent any
+    stages{
+        stage(Loop){
+            steps{
+                scripts{
+                    for(int i=0;i<5;i++){
+                    println (i)
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+
