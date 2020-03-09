@@ -1,0 +1,28 @@
+pipeline{
+    agent any
+    options{
+        timestamps()
+    }
+    stages{
+        stage("Commad bat"){ /* bat is used in only windows angent */
+            steps{
+                echo "divya"
+                sleep 2
+                echo "Sai"
+                sleep 3
+                echo "T"
+            }
+        }
+    }
+    post{
+        always{
+            echo "always"
+        }
+        changed{
+            echo "there is change in the build status when comapare with pervious one"
+        }
+        fixed{
+            echo "pervious build fails and current build wii be scuess it will excute"
+        }
+    }
+}
