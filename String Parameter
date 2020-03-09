@@ -1,0 +1,27 @@
+pipeline{
+    agent any
+    stages{
+        stage(stringparameter){
+            steps{
+                echo "Print the value $Name"
+            }
+        }
+        stage(Choiceprameter){
+             steps{
+                echo "Print the value $Select"
+            }
+        }
+        stage(Bool){
+            steps{
+                script{
+                    if(params.Bool){
+                    echo"print the vaue $Bool"
+                    }
+            
+            }
+        }
+        
+           
+        }
+    }
+}
