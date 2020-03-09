@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    stages{
+        stage(build){
+	Failfast true
+            parallel{
+                stage(timestamps){
+                    steps{
+                        build('Timestamps')
+                    }
+                }
+                stage(Timeout){
+                    steps{
+                        build('timeout')
+                    }
+                }
+            }
+        }
+    }
+}
