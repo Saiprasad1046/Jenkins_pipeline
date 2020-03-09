@@ -1,0 +1,14 @@
+pipeline{
+    agent any
+    environment {
+        Myname="Saiprasad Rao"
+    }
+    stages{
+        stage(build){
+            steps{
+                echo "My name is $Myname"
+            }
+        }
+    }
+}
+
