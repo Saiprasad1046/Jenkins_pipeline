@@ -1,0 +1,18 @@
+Jobresult = build(job”:jobname”,  propagate: false).result
+
+pipeline{
+    agent any
+    options{
+        disableConcurrentBuilds()
+    }
+    stages{
+        stage(timestamp){
+            steps{
+                scripts{
+                jobresult=build(job:"Timestamps", propagate:false).result
+                build("Timestamps")
+                IF(jobresult==SUCESS)
+                currentBuild.result=SUCESS""
+            }
+            }
+
