@@ -1,0 +1,13 @@
+pipeline{
+    agent any
+    options{
+        buildDiscarder(logRotator(numTokeepstr:'2'))
+    }
+    stages{
+        stage("Sai"){
+            steps{
+               echo "sai"
+            }
+        }
+    }
+}
