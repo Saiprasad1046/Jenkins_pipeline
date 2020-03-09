@@ -1,0 +1,19 @@
+pipeline{
+    agent any
+    environment{
+        Toolname="Devops"
+    }
+    stages{
+        stage(conditional){
+            steps{
+                script{
+                    if(Toolname=="Devop")
+                    echo "Correct"
+                    else
+                    echo "Wrong"
+                }
+            
+            }
+        }
+    }
+}
